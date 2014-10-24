@@ -1,3 +1,4 @@
+```python
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 # Above the run-comment and file encoding comment.
@@ -48,3 +49,4 @@ if __name__=='__main__':
         print 'usage : kmean.py <path_to_originFile, path_to_targetFile, group_number> '
         sys.exit(1)
     get_dis_export(sys.argv[1],sys.argv[2],int(sys.argv[3]))
+```
