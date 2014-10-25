@@ -54,5 +54,3 @@ if __name__=='__main__':
         print 'usage : kmean.py <path_to_originFile, path_to_targetFile, group_number> '
         sys.exit(1)
     getResult(sys.argv[1],sys.argv[2],int(sys.argv[3]))
-
-#inFile = '/Users/bryanyang/Documents/workspace/Python/Kmeans_distance_center/iris.csv'
