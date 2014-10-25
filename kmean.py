@@ -15,10 +15,12 @@ from operator import itemgetter
 from collections import Counter
 
 def kmean_distance(filename, group):
-    k = KMeans(n_clusters = group)
+    k = KMeans(n_clusters = group, tol=0.000000001, init='random')
+    rowname = filename[:,0]    
+    filename = filename[:,1:]
     g = k.fit_predict(filename)  ##group
     distance = k.fit_transform(filename) ## caculate distance between point and "every" group center
-    g = np.column_stack((np.arange(len(filename)),g, np.zeros((len(filename),)) )) ## combine raw data and    
+    g = np.column_stack((rowname, g, np.zeros((len(filename),)) )) ## combine raw data and    
     for nrow in range(len(g)):
         id = int(g[nrow,1]) ##catch the group id 
         d = distance[nrow,id] ## get the distance with point's own group center 
@@ -51,12 +53,6 @@ if __name__=='__main__':
     if len(sys.argv) != 4:
         print 'usage : kmean.py <path_to_originFile, path_to_targetFile, group_number> '
         sys.exit(1)
-<<<<<<< HEAD
     getResult(sys.argv[1],sys.argv[2],int(sys.argv[3]))
 
-    
-
-    
-=======
-    get_dis_export(sys.argv[1],sys.argv[2],int(sys.argv[3]))
->>>>>>> FETCH_HEAD
+#inFile = '/Users/bryanyang/Documents/workspace/Python/Kmeans_distance_center/iris.csv'
