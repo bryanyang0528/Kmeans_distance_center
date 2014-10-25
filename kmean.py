@@ -51,12 +51,5 @@ if __name__=='__main__':
     if len(sys.argv) != 4:
         print 'usage : kmean.py <path_to_originFile, path_to_targetFile, group_number> '
         sys.exit(1)
-<<<<<<< HEAD
     getResult(sys.argv[1],sys.argv[2],int(sys.argv[3]))
 
-    
-
-    
-=======
-    get_dis_export(sys.argv[1],sys.argv[2],int(sys.argv[3]))
->>>>>>> FETCH_HEAD
